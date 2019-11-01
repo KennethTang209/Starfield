@@ -1,4 +1,4 @@
-Particle[] parts = new Particle[200];
+Particle[] parts = new Particle[100];
 void setup()
 {
 	size(500, 500);
@@ -27,25 +27,41 @@ class Particle
 
 	Particle()
 	{
-		x = Math.random()*500;
-		y = Math.random()*500;
-		mySpeed = Math.random()*5;
+		x = 250;
+		y = 250;
+		mySpeed = Math.random()*4+0.5;
 		myAngle = Math.random()*2*Math.PI; 
 		myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 	}
 	void move()
 	{
 		if(y > 500){
-			myAngle = (2*Math.PI - myAngle);
+			x =250;
+			y = 250;
+			myAngle = Math.random()*2*Math.PI;
+			mySpeed = Math.random()*4+0.5;
+			myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 		}
 		if(y < 0){
-			myAngle = (2*Math.PI - myAngle);
+			x =250;
+			y = 250;
+			myAngle = Math.random()*2*Math.PI;
+			mySpeed = Math.random()*4+0.5;
+			myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 		}
 		if(x > 500){
-			myAngle = (Math.PI - myAngle);
+			x =250;
+			y = 250;
+			myAngle = Math.random()*2*Math.PI;
+			mySpeed = Math.random()*4+0.5;
+			myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 		}
 		if(x < 0){
-			myAngle = (Math.PI - myAngle);
+			x =250;
+			y = 250;
+			myAngle = Math.random()*2*Math.PI;
+			mySpeed = Math.random()*4+0.5;
+			myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 		}
 		x += Math.cos(myAngle) * mySpeed;
 		y += Math.sin(myAngle) * mySpeed;
@@ -62,7 +78,7 @@ class OddballParticle extends Particle
 	void show()
 	{
 		fill(myColor);
-		rect((float)x-25, (float)y-25, 25, 25);
+		rect((float)x-12.5, (float)y-12.5, 25, 25);
 	}
 }
 void mousePressed(){
